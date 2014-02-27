@@ -1,11 +1,11 @@
-%define major 5
+%define major 4
 %define libname %mklibname KF5Plotting %{major}
 %define devname %mklibname KF5Plotting -d
 %define debug_package %{nil}
 
 Name: kplotting
-Version: 4.95.0
-Release: 2
+Version: 4.96.0
+Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/4.95.0/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 plotting library
 URL: http://kde.org/
@@ -60,6 +60,8 @@ among other things.
 
 %install
 %makeinstall_std -C build
+mkdir -p %{buildroot}%{_libdir}/qt5
+mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
@@ -68,3 +70,4 @@ among other things.
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5Plotting
+%{_libdir}/qt5/mkspecs/modules/*
