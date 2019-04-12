@@ -19,6 +19,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
 # For QCH docs
 BuildRequires: doxygen
+BuildRequires: qt5-assistant
 
 %description
 KPlotting offers graph drawing functions.
