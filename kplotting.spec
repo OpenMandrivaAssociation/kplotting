@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kplotting
-Version:	5.61.0
+Version:	5.62.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 plotting library
@@ -61,6 +61,14 @@ Suggests: %{devname} = %{EVRD}
 %description -n %{name}-devel-docs
 Developer documentation for %{name} for use with Qt Assistant
 
+%package designer
+Summary: Qt Designer plugin for handling %{name} widgets
+Group: Development/KDE and Qt
+Requires: %{libname} = %{EVRD}
+
+%description designer
+Qt Designer plugin for handling %{name} widgets
+
 %prep
 %setup -q
 %cmake_kde5
@@ -83,3 +91,6 @@ Developer documentation for %{name} for use with Qt Assistant
 
 %files -n %{name}-devel-docs
 %{_docdir}/qt5/*.{tags,qch}
+
+%files designer
+%{_libdir}/qt5/plugins/designer/kplotting5widgets.so
