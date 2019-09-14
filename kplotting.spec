@@ -17,6 +17,7 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: cmake(Qt5UiPlugin)
 # For QCH docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
